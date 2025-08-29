@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindClass</title>
-   <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    
-    <h1>Ola mundo</h1>
-</body>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <!-- ======================== MENU DO TOPO ======================== -->
+    <nav>
+      <a href="#">
+        <img
+          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.png"
+          alt="Logo MDB"
+          draggable="false"
+        />
+        <!-- Aqui fica a logo -->
+      </a>
+    </nav>
+
+    <!-- ======================== CONTEÚDO PRINCIPAL PARA O PUBLICO ======================== -->
+    <br /><br /><br /><br /><br /><br />
+
+    <main role="main" aria-labelledby="titulo-principal">
+      <!-- O h1 serve como título principal da página -->
+      <h1 id="titulo-principal">
+        Olá, Bem-vindo ao Caminho da Onça
+        <img
+          src="https://img.icons8.com/?size=100&id=6ERxc5PYbRTJ&format=png&color=000000"
+          alt="Ícone de acessibilidade"
+        />
+      </h1>
+
+      <!-- Subtítulo explicando o que o usuário deve fazer -->
+      <h3 id="instrucao">Escolha uma das opções de acessibilidade:</h3>
+
+      <div role="group" aria-describedby="instrucao">  <!-- Essa tag aqui é padrão do HTML para deficientes visuais !-->
+        <!-- Botão com descrição para leitores de tela -->
+        <a href="deficiente_visual.html">
+          <button
+            type="button"
+            class="btn-primary"
+            id="btn"
+            aria-label="Ativar acessibilidade para deficientes visuais"
+          >
+            Deficiente Visual
+          </button>
+        </a>
+
+        <a href="daltonico.html">
+          <button
+            type="button"
+            id="btn"
+            aria-label="Ativar acessibilidade para pessoas daltônicas"
+          >
+            Daltônico
+          </button>
+        </a>
+
+        <a href="idoso.html">
+          <button
+          class="btn-danger"
+            type="button"
+            id="btn"
+            aria-label="Ativar acessibilidade para idosos"
+          >
+            Idoso
+          </button>
+        </a>
+      </div>
+    </main>
+  </body>
 </html>
