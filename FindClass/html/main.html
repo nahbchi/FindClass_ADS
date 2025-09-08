@@ -1,74 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FindClass</title>
-    <link rel="stylesheet" href="../css/main.css" />
-  </head>
-  <body>
-    <!-- ======================== NOSSA NAVBAR ======================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/Adobe Express - file.png">
+    <title>Main page</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(185, 111, 0);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: clamp(70px, 15vh, 160px);
+            background-color: rgb(255, 166, 0);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            gap: 16px;
+        }
+
+        nav img {
+            height: clamp(50px, 12vw, 120px);
+            width: auto;
+            transition: height 0.3s ease;
+        }
+
+        nav h1 {
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(199, 73, 0);
+            margin: 0;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        nav h1 img {
+            height: 32px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        main h1 {
+            color: rgb(0, 0, 0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 0 30px 0;
+            text-align: center;
+        }
+
+        #startButton {
+            display: block;
+            padding: 15px 30px;
+            background-color: #924fc9;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-weight: bold;
+            font-size: large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #startButton:hover {
+            background-color: #932ca1;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
     <nav>
-      <a href="#">
-        <img
-          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.png"
-          alt="Logo MDB"
-          draggable="false"
-        />
-        <!-- Aqui fica a logo, mudar depois quando baixar ela-->
-      </a>
+        <img src="../images/Adobe Express - file.png" alt="Logo">
+        <h1>
+            Caminho da onça
+            <img src="../images/icons8-jaguar-32.png" alt="Ícone Onça">
+        </h1>
     </nav>
+    <main>
+      <!-- Pra leitores de tela -->
+        <h1
+            aria-label="Bem-vindo, Viajante, ao caminho da onça! Vejamos que você precisa da nossa ajuda. Vamos seguir a trilha?">
+            Bem-vindo, Viajante, ao caminho da onça! Vejamos que você precisa da nossa ajuda. Vamos seguir a trilha?
+        </h1>
+        <span class="sr-only">
+            Este site é dedicado a ajudar todos os públicos a acessar nossa sala de aula no laboratorio C-16!
+        </span>
 
-    <!-- ======================== CONTEÚDO PRINCIPAL AO ENTRAR NO SITE ======================== -->
-    <br /><br /><br /><br /><br /><br />
+        <button id="startButton" aria-label="Clique para seguir o caminho da onça">Vamos!</button>
 
-    <main role="main" aria-labelledby="titulo-principal">
-      <!-- O h1 serve como título principal da página -->
-      <h1 id="titulo-principal">
-        Olá, Bem-vindo ao Caminho da Onça
-        <img
-          src="https://img.icons8.com/?size=100&id=6ERxc5PYbRTJ&format=png&color=000000"
-          alt="Ícone de acessibilidade"
-        />
-      </h1>
+        <div aria-live="polite" role="alert" id="buttonAlert" class="sr-only"></div>
 
-      <!-- explicando para o usuario as opções -->
-      <h3 id="instrucao">Escolha uma das opções de acessibilidade:</h3>
-
-      <div role="group" aria-describedby="instrucao">  <!-- Essa tag aqui é padrão do HTML para deficientes visuais !-->
-        <!-- Botão com descrição para leitores de tela -->
-        <a href="deficiente_visual.html">
-          <button
-            type="button"
-            class="btn-primary"
-            id="btn"
-            aria-label="Ativar acessibilidade para deficientes visuais"
-          >
-            Deficiente Visual
-          </button>
-        </a>
-
-        <a href="daltonico.html">
-          <button
-            type="button"
-            id="btn"
-            aria-label="Ativar acessibilidade para pessoas daltônicas"
-          >
-            Daltônico
-          </button>
-        </a>
-
-        <a href="idoso.html">
-          <button
-          class="btn-danger"
-            type="button"
-            id="btn"
-            aria-label="Ativar acessibilidade para idosos"
-          >
-            Idoso
-          </button>
-        </a>
-      </div>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
     </main>
-  </body>
+
+
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    //Clicou no botão "Vamos" e aparece uma mensagem para leitores de tela com esse content
+        const button = document.getElementById('startButton');
+        const alertDiv = document.getElementById('buttonAlert');
+
+        button.addEventListener('click', () => {
+            alertDiv.textContent = "Você clicou no botão Vamos. Preparando para seguir a Trilha!";
+        });
+    </script>
+
+</body>
+
 </html>
