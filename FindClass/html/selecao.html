@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - Caminho da Onça</title>
+    <link rel="icon" type="image/x-icon" href="../images/Adobe Express - file.png">
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(225, 125, 17);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: clamp(70px, 15vh, 160px);
+            background-color: rgb(255, 166, 0);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            gap: 16px;
+
+        }
+
+
+        .nav-a,
+        .nav-a:focus,
+        .nav-a:active {
+            outline: none;
+            box-shadow: none;
+            text-decoration: none;
+        }
+
+        nav img {
+            height: clamp(50px, 12vw, 120px);
+            width: auto;
+        }
+
+        nav h1 {
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(199, 73, 0);
+            margin: 0;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 1s;
+        }
+
+        nav h1:hover {
+            color: #331f00;
+        }
+
+        .sobre {
+            margin-left: 22%;
+        }
+
+        .link-sobre {
+            padding-right: 20px;
+            color: inherit;
+            text-decoration: none;
+            font: inherit;
+            transition: 0.3s;
+        }
+
+        .link-sobre:hover {
+            color: #924fc9;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        main h1 {
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            color: #000;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .option-btn {
+            display: block;
+            padding: 15px 20px;
+            background-color: #924fc9;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .option-btn:hover,
+        .option-btn:focus {
+            outline: 1px solid #000000;
+            background-color: #732ca1;
+            transform: scale(1.03);
+
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        footer {
+            height: clamp(70px, 15vh, 160px);
+            background-color: rgb(255, 166, 0);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-senai {
+            height: clamp(40px, 8vw, 80px);
+            width: auto;
+          
+   
+        }
+
+        .footer-direitos {
+            font-weight: bold;
+            color: rgb(199, 73, 0);
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+        }
+
+
+        @media (max-width: 600px) {
+            .footer-content {
+                justify-content: center;
+            }
+
+            .footer-logo-senai {
+                position: static;
+                margin-bottom: 8px;
+            }
+
+            .footer-center {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/Adobe Express - file.png" alt="Logo do Caminho da Onça">
+        <a href="main.html" class="nav-a" aria-label="Ir para a página inicial">
+            <h1 aria-label="Caminho da Onça, página inicial do site">
+                Caminho da onça
+            </h1>
+        </a>
+    </nav>
+    <h1 class="sobre" aria-label="Seção Sobre Nós, onde apresentamos quem somos e nossa missão">
+        <a href="sobre.html" class="link-sobre">Sobre Nós</a>
+    </h1>
+    </nav>
+
+    <main>
+        <h1>Você possui alguma das características a seguir?</h1>
+        <div class="options">
+            <a href="#" class="option-btn" aria-label="Sou uma pessoa idosa">Sou uma pessoa idosa</a>
+            <a href="#" class="option-btn" aria-label="Sou uma pessoa com baixa visão ou cegueira">Sou uma pessoa
+                com baixa visão ou cegueira</a>
+            <a href="#" class="option-btn" aria-label="Sou uma pessoa com diferença de percepção de cores">Sou uma
+                pessoa com diferença de percepção de cores</a>
+            <a href="#" class="option-btn"
+                aria-label="Sou uma pessoa com neurodiversidade (TEA, deficiência intelectual, etc.)">Sou uma pessoa com
+                neurodiversidade (TEA, deficiência intelectual, etc.)</a>
+            <a href="#" class="option-btn" aria-label="Não possuo nenhuma dessas características">Não, não possuo
+                nenhuma dessas características</a>
+        </div>
+
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content" role="contentinfo">
+            <img class="footer-logo-senai" src="https://www.fatecsenaimt.ind.br/img/fatec-senai-mt.png"
+                alt="Logo FATEC SENAI">
+            <div class="footer-direitos">
+                <span>&copy; 2025 Caminho da Onça. Todos os direitos reservados.</span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+
+</html>

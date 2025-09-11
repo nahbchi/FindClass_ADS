@@ -9,7 +9,7 @@
     <style>
         body {
             margin: 0;
-            background-color: rgb(185, 111, 0);
+            background-color: rgb(225, 125, 17);
             overflow-x: hidden;
         }
 
@@ -45,6 +45,25 @@
             gap: 8px;
         }
 
+        .sobre {
+            margin-left: 21%;
+        }
+
+        .link-sobre {
+
+            padding-right: 20px;
+            color: inherit;
+            text-decoration: none;
+            font: inherit;
+            transition: 0.3s;
+
+        }
+
+        .link-sobre:hover {
+            color: #924fc9;
+
+            cursor: pointer;
+        }
 
         nav h1 img {
             height: 32px;
@@ -79,6 +98,7 @@
             padding: 15px 30px;
             background-color: #924fc9;
             color: #ffffff;
+            text-decoration: none;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 8px;
@@ -86,7 +106,7 @@
             transition: background-color 0.3s ease, border-color 0.3s ease;
             font-weight: bold;
             font-size: large;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         #startButton:hover {
@@ -109,14 +129,23 @@
 <body>
 
     <nav>
-        <img src="../images/Adobe Express - file.png" alt="Logo">
-        <h1>
+        <img src="../images/Adobe Express - file.png" alt="Logo do Caminho da Onça">
+
+        <h1 aria-label="Caminho da Onça, página inicial do site">
             Caminho da onça
-            <img src="../images/icons8-jaguar-32.png" alt="Ícone Onça">
+            <span class="sr-only">Título principal do site. Clique no logo ou nome para voltar à página inicial.</span>
         </h1>
+
+        <h1 class="sobre" aria-label="Seção Sobre Nós, onde apresentamos quem somos e nossa missão">
+            <a href="sobre.html" class="link-sobre">
+                Sobre Nós
+            </a>
+            <span class="sr-only">Acesse aqui para conhecer mais sobre a nossa equipe e o propósito do projeto.</span>
+        </h1>
+
     </nav>
     <main>
-      <!-- Pra leitores de tela -->
+     
         <h1
             aria-label="Bem-vindo, Viajante, ao caminho da onça! Vejamos que você precisa da nossa ajuda. Vamos seguir a trilha?">
             Bem-vindo, Viajante, ao caminho da onça! Vejamos que você precisa da nossa ajuda. Vamos seguir a trilha?
@@ -125,7 +154,9 @@
             Este site é dedicado a ajudar todos os públicos a acessar nossa sala de aula no laboratorio C-16!
         </span>
 
-        <button id="startButton" aria-label="Clique para seguir o caminho da onça">Vamos!</button>
+        <a href="selecao.html" id="startButton" class="btn-start" aria-label="Clique para seguir o caminho da onça">
+            Vamos!
+        </a>
 
         <div aria-live="polite" role="alert" id="buttonAlert" class="sr-only"></div>
 
@@ -142,7 +173,7 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-    //Clicou no botão "Vamos" e aparece uma mensagem para leitores de tela com esse content
+        //Clicou no botão "Vamos" e aparece uma mensagem para leitores de tela com esse content
         const button = document.getElementById('startButton');
         const alertDiv = document.getElementById('buttonAlert');
 
