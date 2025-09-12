@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seleção - Caminho da Onça</title>
     <link rel="icon" type="image/x-icon" href="../images/Adobe Express - file.png">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
     <style>
         body {
             margin: 0;
             background-color: rgb(225, 125, 17);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             overflow-x: hidden;
+
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
         }
 
         nav {
@@ -95,34 +104,6 @@
             font-weight: bold;
         }
 
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .option-btn {
-            display: block;
-            padding: 15px 20px;
-            background-color: #924fc9;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .option-btn:hover,
-        .option-btn:focus {
-            outline: 1px solid #000000;
-            background-color: #732ca1;
-            transform: scale(1.03);
-
-        }
-
         .sr-only {
             position: absolute;
             width: 1px;
@@ -157,8 +138,8 @@
         .footer-logo-senai {
             height: clamp(40px, 8vw, 80px);
             width: auto;
-          
-   
+
+
         }
 
         .footer-direitos {
@@ -203,21 +184,13 @@
     </nav>
 
     <main>
-        <h1>Você possui alguma das características a seguir?</h1>
-        <div class="options">
-            <a href="#" class="option-btn" aria-label="Sou uma pessoa idosa">Sou uma pessoa idosa</a>
-            <a href="#" class="option-btn" aria-label="Sou uma pessoa com baixa visão ou cegueira">Sou uma pessoa
-                com baixa visão ou cegueira</a>
-            <a href="#" class="option-btn" aria-label="Sou uma pessoa com diferença de percepção de cores">Sou uma
-                pessoa com diferença de percepção de cores</a>
-            <a href="#" class="option-btn"
-                aria-label="Sou uma pessoa com neurodiversidade (TEA, deficiência intelectual, etc.)">Sou uma pessoa com
-                neurodiversidade (TEA, deficiência intelectual, etc.)</a>
-            <a href="/html/nonechars.html" class="option-btn" aria-label="Não possuo nenhuma dessas características">Não, não possuo
-                nenhuma dessas características</a>
-        </div>
+
+<div id="map"></div>
+
 
     </main>
+
+
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -238,6 +211,7 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
+   
 </body>
 
 </html>
